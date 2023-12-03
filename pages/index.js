@@ -1,10 +1,11 @@
 import React from 'react'
+import Quiz from './quiz'
 
 const index = () => {
   return (
-    <div className=' flex justify-center items-center w-[100%] h-[100vh] ' >
-      
-    </div>
+    <>
+      <Quiz />
+    </>
   )
 }
 
