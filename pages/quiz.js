@@ -73,7 +73,7 @@ const Quiz = () => {
 
   return (
     <>
-      <div className='flex flex-col items-center justify-between'>
+      <div className= 'flex flex-col items-center justify-between'>
         <Progressbar questionAttempted={questionAttempted} />
         <QuizWindow data={sampleData} setQuestionAttempted={setQuestionAttempted} questionAttempted={questionAttempted} />
       </div>

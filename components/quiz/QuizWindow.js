@@ -8,7 +8,7 @@ const QuizWindow = ({ data, setQuestionAttempted, questionAttempted }) => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [answerCorrect, setAnswerCorrect] = useState(false)
   const [showQuizStatus, setShowQuizStatus] = useState(false)
-
+  
   const handleOptionSelect = (option) => {
     setSelectedAnswer(option);
   };
