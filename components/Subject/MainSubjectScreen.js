@@ -22,7 +22,7 @@ const MainSubjectScreen = () => {
       </div>
       <Divider />
       {/* Map through the subjects and render each Subject component */}
-      <div className="mt-4 h-[81vh] flex flex-col p-4 overflow-auto overflow-x-hidden overflow-y-auto">
+      <div className="mt-4 h-[81vh]  flex flex-col p-4 overflow-auto overflow-x-hidden overflow-y-auto">
         {subjects.map(subject => (
           <Subject key={subject._id} subjectName={subject.subjectName} arenas={subject.arenas} />
         ))}

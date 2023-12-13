@@ -24,7 +24,7 @@ const SideBar = () => {
       <Divider />
       <div className=" h-52 flex flex-col items-center justify-center">
         <SideBarIcon text="Dashboard" icon={<MdSpaceDashboard size="28" />} />
-        <SideBarIcon text="Course List" icon={<FaBook size="24" />} />
+        <SideBarIcon text="Subject List" icon={<FaBook size="24" />} />
       </div>
       <Divider />
       <div className=" flex flex-col items-center justify-center">

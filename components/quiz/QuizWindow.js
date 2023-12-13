@@ -6,8 +6,8 @@ import WrongAnswerAnimation from "../animation/WrongAnswerAnimation";
 const QuizWindow = ({ data, setQuestionAttempted, questionAttempted }) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
-  const [answerCorrect, setAnswerCorrect] = useState(false)
-  const [showQuizStatus, setShowQuizStatus] = useState(false)
+  const [answerCorrect, setAnswerCorrect] = useState(false);
+  const [showQuizStatus, setShowQuizStatus] = useState(false);
   
   const handleOptionSelect = (option) => {
     setSelectedAnswer(option);
@@ -26,7 +26,7 @@ const QuizWindow = ({ data, setQuestionAttempted, questionAttempted }) => {
       }
 
       // // Move to the next question
-
+      
     }
 
   };
@@ -37,13 +37,12 @@ const QuizWindow = ({ data, setQuestionAttempted, questionAttempted }) => {
       setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
       setSelectedAnswer(null); // Reset selected answer for the next question
     }
-    setQuestionAttempted(questionAttempted + 1)
+    setQuestionAttempted(questionAttempted + 1);
   }
 
   return (
     <>
       <div className=" w-[100%] flex flex-col justify-between h-[86vh] " >
-
 
         <div className=" w-[100%] flex flex-col justify-center items-center mt-[4rem] gap-[2rem]  ">
           <h2 className=" font-dm_sans font-[600] px-[2rem] py-[1rem] rounded-full  text-[1.5rem]  ">{data[currentQuestionIndex]?.text}</h2>

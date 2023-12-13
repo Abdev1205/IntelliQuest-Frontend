@@ -6,9 +6,11 @@ import { server } from '@/pages/index.js';
 import axios from 'axios';
 import { Message_Data } from "../context/Context";
 // import ImagePreloader from '@lottie-web/player/js/utils/imagePreloaderWorkerOverride';
-const login = () => {
+const register = () => {
   const router = useRouter();
+  const [visible, setVisible] = useState(false);
   const {isAuthenticated, setIsAuthenticated, loading, setLoading} = useContext(Message_Data);
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -17,8 +19,9 @@ const login = () => {
     setLoading(true);
     try {
       const { data } = await axios.post(
-        `${server}/api/login`,
+        `${server}/api/register`,
         {
+          name,
           email,
           password,
         },
@@ -47,7 +50,6 @@ const login = () => {
     }
   }, [isAuthenticated, router]);
 
-
   return (
     <div className="w-full h-screen flex bg-zinc-800">
       <div className="grid grid-cols-1 md:grid-cols-2 m-auto h-[550px] rounded-lg bg-neutral-300 shadow-gray-600 sm:max-w-[900px]">
@@ -61,6 +63,13 @@ const login = () => {
               Please Enter your Details
             </p>
             <div className="pt-6">
+              <input
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="border p-2 mr-2 rounded-t-xl w-346"
+                type="text"
+                placeholder="username"
+              />
               <input
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -77,7 +86,7 @@ const login = () => {
               />
             </div>
             <button onClick={submitHandler} className="flex-none rounded-full px-20 py-1.5 mt-8 mb-2 text-base text-white bg-zinc-900 hover:bg-neutral-700">
-              Sign In
+              Sign Up
             </button>
           </form>
         </div>
@@ -86,4 +95,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default register;
